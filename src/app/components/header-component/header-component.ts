@@ -13,10 +13,33 @@ import { RouterLink } from "@angular/router";
 export class HeaderComponent {
 
 
+  paletteId = 0;
   isDarkMode = false;
 
   switchMode() {
-    throw new Error('Method not implemented.');
+    // if (this.isDarkMode) {
+    //   this.isDarkMode = false;
+    // } else {
+    //   this.isDarkMode = true;
+    // }
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-body');
   }
 
+  switchPalette() {
+    this.paletteId++;
+    if (this.paletteId > 2) {
+      this.paletteId = 0;
+    }
+    if (this.paletteId === 1) {
+      document.body.classList.add('charteuse-theme');
+    } else if (this.paletteId === 2) {
+      document.body.classList.remove('charteuse-theme');
+      document.body.classList.add('orange-theme');
+    } else {
+      document.body.classList.remove('charteuse-theme');
+      document.body.classList.remove('orange-theme');
+    }
+    
+  }
 }
