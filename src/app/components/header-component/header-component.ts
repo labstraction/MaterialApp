@@ -12,4 +12,11 @@ import { RouterLink } from "@angular/router";
 })
 export class HeaderComponent {
 
+
+  isDarkMode = false;
+
+  switchMode() {
+    throw new Error('Method not implemented.');
+  }
+
 }
